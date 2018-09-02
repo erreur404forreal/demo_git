@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'cac_champagneregular';
+    src: url('cac_champagne-webfont.eot');
+    src: url('cac_champagne-webfont.eot?#iefix') format('embedded-opentype'),
+         url('cac_champagne-webfont.woff2') format('woff2'),
+         url('cac_champagne-webfont.woff') format('woff'),
+         url('cac_champagne-webfont.ttf') format('truetype'),
+         url('cac_champagne-webfont.svg#cac_champagneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body
+{
+  background-color: lightblue;;
+  display: flex;
+  margin: 0px auto;
+  padding: 0px auto;
+}
+
+h1
+{
+  text-align: center;
+}
+
+li,p,h1
+{
+  font-family: 'cac_champagneregular', Arial, serif;
+  font-size: 2em;
+}
+
+.bordure
+{
+/*  border: thick double #32a1ce;*/
+  text-align: center;
+}
+
+.ombre
+{
+  box-shadow: 8px 8px 6px #8d4141;
+}
+
+h2
+{
+  color: #8d4141;
+}
+
+#lisere
+{
+
+  background-image: url("lisere2.jpg");
+  width: 20%;
+
+}
+
+
+article
+{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 1024px)
+{
+    p
+    {
+        color: red;
+        font-size: 1.5em;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    body
+    {
+      border: solid;
+    }
+
+    #lisere
+    {
+      display: none;
+    }
+    article
+    {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+}

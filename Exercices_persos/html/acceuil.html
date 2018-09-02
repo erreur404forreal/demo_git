@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Site officiel de..........">
+<title>**********************************************</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Un certain site</h1>
+  <p>Aliquam convallis sollicitudin purus.</p>
+</div>
+
+<div class="topnav">
+  <a href="notrehistoire.html">Notre Histoire</a>
+  <a href="publications.html">Publications</a>
+  <a href="prochainseve.html">Prochains Evenements</a>
+  <a href="archives.html">Archives</a>
+  <a href="#" class="active" style="float:right">Acceuil</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>NOUVEAU</h2>
+      <h5>description</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. </p>
+    </div>
+    <div class="card">
+     <h2>EVENEMENTS A VENIR</h2>
+      <h5>description</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. </p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>Compteur</h2>
+
+	<p>Count numbers: <output id="result"></output></p>
+	<button onclick="commencer()">Compter</button>
+	<button onclick="arreter()">Arreter</button>
+
+	<p><strong>Note:</strong> Je sais bien compter.</p>
+
+	<script>
+	var w;
+
+	function commencer() {
+		if(typeof(Worker) !== "undefined") {
+			if(typeof(w) == "undefined") {
+				w = new Worker("demo_workers.js");
+			}
+			w.onmessage = function(event) {
+				document.getElementById("result").innerHTML = event.data;
+			};
+		} else {
+			document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+		}
+	}
+
+	function arreter() {
+		w.terminate();
+		w = undefined;
+	}
+	</script>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+
+  <p id="la">A****** Copyright &copy; 2018</p>
+</div>
+
+</body>
+</html>

@@ -6,22 +6,11 @@
   <link rel="stylesheet" href="style.css" />
   <script type="text/javascript" src="hello.js"></script>
   <script type="text/javascript">
-
     <!--
 
 
-    var taille = prompt('Combien mesurez-vous ? (en mètres)');
 
-    var poids = prompt('Combien pesez-vous ? (en kgs)');
-
-
-
-    costaud = (taille>=2 && poids>=90);
-
-    alert('Vous êtes costaud : ' + costaud);
-    //conversion('cm',100,'m');
     //-->
-
   </script>
 </head>
 
@@ -36,9 +25,28 @@
           <section>
               <header>
                 <div id="haut">
-
-                  <H1> CEREME Josué <img src="moi.jpg" alt="mon tête" /></H1>
+                  <H1> CEREME Josué <img src="moi.jpg" alt="mon tête" id="uneImage" /></H1>
                   <p class="bordure"> Humain, amoureux d'Elle, engagé dans ce que je fais, loyal, friendly (selon Elle)</p>
+                  <form action="page.php"  onsubmit="return verifForm(this)">
+                    <fieldset name="Information personnelles">
+                    <p>
+                      Pseudo : <input type="text" name="pseudo" onblur="verifPseudo(this)"/><br />
+                      E-mail : <input type="text" name="email" size="30" onblur="verifMail(this)" /><br />
+                      Âge : <input type="text" name="age" size="2" onblur="verifAge(this)" /> ans<br />
+                      <input type="submit" value="Valider"
+                    </p>
+                    </fieldset>
+                  </form>
+                  <p>
+                      <a href="javascript: deplacer(-10,0)">Gauche</a><br />
+                      <a href="javascript: deplacer(10,0)">Droite</a><br />
+                      <a href="javascript: deplacer(0,-10)">Haut</a><br />
+                      <a href="javascript: deplacer(0,10)">Bas</a><br />
+                       <a href="#" onclick="javascript:PoM_partie(1,63)">Niveau Z&eacute;r0</a><br />
+                       <a href="#" onclick="javascript:PoM_partie(1,100)">Niveau Normal</a><br />
+                       <a href="#" onclick="javascript:PoM_partie(0,250)">Niveau Geek</a>
+                                       <div id="test">Je suis un cobaye...</div>
+                  </p>
                   </div>
 
 
@@ -57,7 +65,7 @@
                         Panetier des Sbires Dorés</li>
                       <li><strong>juillet 2016 - juin 2017</strong></br>
                          Aiguilletier</li>
-                      <li><strong><a href="#" onmouseover="alert('Guten Tag !\nWie hei\u00DFen Sie ?');">lien</a></strong></li>
+                      <li><strong></strong></li>
                     </ul>
 
                   </div>
